@@ -1,0 +1,59 @@
+>AB699687|IGHG6-1*01|Sus scrofa_Landrace boar|F|CH1|n,49046..49338|294 nt|1|+1|-1| | |294+72=366| | |
+............ncccccaagacggccccatcggtctaccctctggccccctgcggcagg
+gacacgtct.........ggccctaacgtggccttgggctgcctggcctcaagctacttc
+ccc......gagccagtgaccgtgacctggaactcgggcgccctgaccagt.........
+...ggcgtgcacaccttcccatccgtcctgcagccgtca..................ggg
+ctctactccctcagcagcatggtgaccgtgccggccagcagcctg.........tccagc
+aagagctacacctgcaatgtcaaccacccggcc......accaccaccaaggtggacaag
+cgtgtt
+>AB699687|IGHG6-1*01|Sus scrofa_Landrace boar|F|H|g,49665..49687|24 nt|1|+1|-1| | |24+0=24| | |
+ggacgaccatgtcccatatgccca
+>AB699687|IGHG6-1*01|Sus scrofa_Landrace boar|F|CH2|g,49815..50140|327 nt|1|+1|-1| | |327+51=378| | |
+.........gcctgtgaagggcccgggccctcggccttcatcttccctccaaaacccaag
+gacaccctcatgatc...tcccggacccccaaggtcacgtgcgtggtggttgatgtgagc
+caggagaacccggaggtccagttctcctggtacgtggacggcgtagaggtgcac......
+...acggcccagacgaggccaaaggaggagcagttcaac..................agc
+acctaccgtgtggtcagcgtcctaccaatccagcaccaggactgg......ctgaacggg
+aaggagttcaagtgcaaggtcaacaacaaagac......ctcccagcccccatcacaagg
+atcatctccaaggccaaa
+>AB699687|IGHG6-1*01|Sus scrofa_Landrace boar|F|CH3-CHS|g,50234..50559|327 nt|1|+1| | | |327+66=393| | |
+............gggcagacccgggagccgcaggtgtacaccctgcccccacccaccgag
+gagctgtcc.........aggagcaaactcagtgtaacctgcctgatcactggcttctac
+cca......cctgacatcgatgtcgagtggcaaagaaacggacagccggagccagagggc
+...aattaccgcaccaccccgccccagcaggacgtggac..................ggg
+acctacttcctgtacagcaagctcgcggtggacaaggccagctgg......cagcgtgga
+gacccattccagtgtgcggtgatgcacgaggct...ctgcacaaccactacacccagaag
+tccatcttcaagactccg.........ggtaat
+>AB699687|IGHG6-1*01|Sus scrofa_Landrace boar|F|M1|g,52062..52192|132 nt|1|+1| | | |132+0=132| | |
+gaactgctcctggaggagagctgtgccgacgcccaggacggggagctggacgggctctgg
+accaccatctccatcttcatcacgctcttcctgctcagcgtgtgctacagcgccaccgtg
+acgctcttcaag
+>AB699687|IGHG6-1*01|Sus scrofa_Landrace boar|F|M2|52420..52500|81 nt|1| | | | |81+0=81| | |
+gtgaagtggatcttctcgtcggtggtggagctgaagcggaccattgtccccgactacaga
+aacatgatcgggcagggggcc
+>M81771|IGHG6-1*02|Sus scrofa_Minnesota miniature swine|F|CH1|477..770|294 nt|1| | | | |294+72=366| | |
+............gcccccaagacggccccatcggtctaccctctggccccctgcggcagg
+gacacgtct.........ggccctaacgtggccttgggctgcctggcctcaagctacttc
+ccc......gagccagtgaccgtgacctggaactcgggcgccctgaccagt.........
+...ggcgtgcacaccttcccatccgtcctgcagcctgca..................ggg
+ctctactccctcagcagcatggtgaccgtgccggccagcagcctg.........tccagc
+aagagctacacctgcaatgtcaaccacccggcc......accaccaccaaggtggacaag
+cgtgtt
+>M81771|IGHG6-1*02|Sus scrofa_Minnesota miniature swine|F|H|771..794|24 nt|1| | | | |24+0=24| | |
+ggacgaccatgtcccatatgccca
+>M81771|IGHG6-1*02|Sus scrofa_Minnesota miniature swine|F|CH2|795..1121|327 nt|1| | | | |327+51=378| | |
+.........gcctgtgaagggcccgggccctcggccttcatcttccctccaaaacccaag
+gacaccttcatgatc...tcccggacccccaaggtcacgtgcgtggtggttgatgtgagc
+caggagaacccggaggtccagttctcctggtacgtggacggcgtagaggtgcac......
+...acggcccagacgaggccaaaggaggagcagttcaac..................agc
+acctaccgtgtggtcagcgtcctaccaatccagcaccaggactgg......ctgaacggg
+aaggagttcaagtgcaaggtcaacaacaaagac......ctcccagcccccatcacaagg
+atcatctccaaggccaaa
+>M81771|IGHG6-1*02|Sus scrofa_Minnesota miniature swine|F|CH3-CHS|1122..1448|327 nt|1| | | | |327+66=393| | |
+............gggcagacccgggagccgcaggtgtacaccctgcccccacccaccgag
+gagctgtcc.........aggagcaaactcagtgtaacctgcctgatcactggcttctac
+cca......cctgacatcgatgtcgagtggcaaagaaacggacagccggagccagagggc
+...aattaccgcaccaccccgccccagcaggatgtggac..................ggg
+acctacttcctgtacagcaagctcgcggtggacaaggccagctgg......cagcgtgga
+gacccattccagtgtgcggtgatgcacgaggct...ctgcacaaccactacacccagaag
+tccatcttcaagactccg.........ggtaat

@@ -1,0 +1,51 @@
+>EU372654|IGHG4*01|Sus scrofa|F|CH1|n,2..294|294 nt|1|+1|-1| | |294+72=366| | |
+............ncccccaagacggccccatcggtctaccctctggccccctgcggcagg
+gacgtgtct.........ggccctaacgtggccttgggctgcctggcctcaagctacttc
+ccc......gagccagtgaccgtgacctggaactcgggcgccctgaccagt.........
+...ggcgtgcacaccttcccatccgtcctgcagccgtca..................ggg
+ctctactccctcagcagcatggtgaccgtgccggccagcagcctg.........tccagc
+aagagctacacctgcaatgtcaaccacccggcc......accaccaccaaggtggacaag
+cgtgtt
+>EU372654|IGHG4*01|Sus scrofa|F|H|g,621..655|36 nt|1|+1|-1| | |36+0=36| | |
+ggaatacaccagccgcaaacatgtcccatatgccca
+>EU372654|IGHG4*01|Sus scrofa|F|CH2|g,783..1108|327 nt|1|+1|-1| | |327+51=378| | |
+.........gcctgtgaagggcccgggccctcggccttcatcttccctccaaaacccaag
+gacaccctcatgatc...tcccggacccccaaggtcacgtgcgtggtggttgatgtgagc
+caggagaacccggaggtccagttctcctggtacgtggacggcgtagaggtgcac......
+...acggcccagacgaggccaaaggaggagcagttcaac..................agc
+acctaccgcgtggtcagcgtcctgctcatccagcaccaggactgg......ctgaacggg
+aaggagttcaagtgcaaggtcaacaacaaagac......ctcccagcccccatcacaagg
+atcatctccaaggccaaa
+>EU372654|IGHG4*01|Sus scrofa|F|CH3-CHS|g,1193..1489|298 nt|1|+1| | | |298+57=355|partial in 3'| |
+............gggcagacccgggagccgcaggtgtacaccctgcccccacccaccgag
+gagctgtcc.........aggagcaaagtcacgctaacctgcctggtcactggcttctac
+cca......cctgacatcgatgtcgagtggcaaagaaacggacagccggagccagagggc
+...aattaccgcaccaccccgccccagcaggacgtggac..................ggg
+acctacttcctgtacagcaagctcgcggtggacaaggccagctgg......cagcgtgga
+gacacattccagtgtgcggtgatgcacgaggct...ctgcacaaccactacaccc
+>U03782|IGHG4*02|Sus scrofa_Yorkshire|F|CH1|1..143|143 nt|1| | | | |143+223=366|partial in 5'| |
+............................................................
+............................................................
+............................................................
+..........ataccttcccatccgtcctgcagccgtca..................ggg
+ctctactccctcagcagcatggtgaccgtgccggccagcagcctg.........tccagc
+aagagctacacctgcaatgtcaaccacccggcc......accaccaccaaggtggacaag
+cgtgtt
+>U03782|IGHG4*02|Sus scrofa_Yorkshire|F|H|144..179|36 nt|1| | | | |36+0=36| | |
+ggaacaaagaccaaaccaccatgtcccatatgccca
+>U03782|IGHG4*02|Sus scrofa_Yorkshire|F|CH2|180..506|327 nt|1| | | | |327+51=378| | |
+.........gcctgtgaagggcccgggccctcggccttcatcttccctccaaaacccaag
+gacaccctcatgatc...tcccggacccccaaggtcacgtgcgtggtggtagatgtgagc
+caggagaacccggaggtccagttctcctggtacgtggacggcgtagaggtgcac......
+...acggcccagacgaggccaaaggaggagcagttcaac..................agc
+acctaccgcgtggtcagcgtcctgcccatccagcaccaggactgg......ctgaacggg
+aaggagttcaagtgcaaggtcaacaacaaagac......ctcccagcccccatcacaagg
+atcatctccaaggccaaa
+>U03782|IGHG4*02|Sus scrofa_Yorkshire|F|CH3-CHS|507..833|327 nt|1| | || |327+66=393| | |
+............gggcagacccgggagccgcaggtgtacaccctgcccccacccaccgag
+gagctgtcc.........aggagcaaagtcacgctaacctgcctggtcactggcttctac
+cca......cctgacatcgatgtcgagtggcaaagaaacggacagccggagccagagggc
+...aattaccgcaccaccccgccccagcaggacgtggac..................ggg
+acctacttcctgtacagcaagctcgcggtggacaaggccagctgg......cagcgtgga
+gacacattccagtgtgcggtgatgcacgaggct...ctgcacaaccactacacccagaag
+tccatcttcaagactccg.........ggtaaa

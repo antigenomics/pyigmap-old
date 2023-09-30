@@ -1,0 +1,36 @@
+>K01241|IGHEP2*01|Homo sapiens|P|CH1|479..775|297 nt|1| | | | |297+0=297| | |
+tccacacagggcccatccatcttcctcttgatcccctgctgcaaagacattgcctctgat
+gccacctccatgaacctgggctgcctggccacaggctacttcctgaagtcagtgactgtg
+acctgggacacaggctccctcaacaggagcgctgggaccttcccagccaccaccctcacg
+ccctctggccattacgccatcaccagccagctgactgcctcgggtgcgtgggccaaacgc
+tcacctgcagcgtggcacacactctgtggtccgcagaccaggtcagtaccttcagca
+>K01241|IGHEP2*01|Homo sapiens|P|CH2|776..1095|320 nt|1| | | | |320+0=320| | |
+tctactccagggacttcaccctccccaccgtgaagatcttacagtcctcctgtgatggca
+gtggacacttacccccgaccatccagttcctgtgcctcatctctgggtacacccaggtgc
+catcagcatcacctggctggaggatgggcaggtcgtggatgtgaactggtccatcgcctc
+tcccatactggaggatgagctggcctccacacaaagcaagctcaccctcacccagaagcg
+ctggctgcccgaccacacctacacctgccaggtcacctatcaaggtaacacctttgagga
+cagtgccaagaagtgtgcag
+>K01241|IGHEP2*01|Homo sapiens|P|CH3|1096..1405|310 nt|1| | | | |310+0=310| | |
+attctaacccgcaaggggtgagcacctacctgagccggtccagccccttctacctgttca
+tccgcaagttgcccacaatcacctgtctggtggtggacctggcacccagcaaggagaacg
+tgaagctgacttggtcccaggccagtgggaagtctgtggctcaggtcatcctaaggcaag
+agaagcagtgcaatggcacgttcaccatcacgtccaccctgctggtgggcaccagagact
+ggatcaagggggagacctaccagtgcagggtgacccacacccacctgcgatccacgacca
+agatcagcgg
+>M24164|IGHEP2*02|Homo sapiens|P|CH1|200..503|304 nt|1| | | | |304+0=304| | |
+gcctccacacagggcccatccatccaccttccttgatcccctgctgcaaagacattgcct
+ctgatgccacctccatgaacctggctgcctgccacaggacttcctaagcagactgactgc
+cnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+nnnnnnnnnnnnnnnnngcctaccatcaccttactaaccatctcgggtgcgtgggccaaa
+tgttcacctgcagctgtggcacacactctgtggtccgcagaccanatcannnnnncgttc
+agca
+>M24164|IGHEP2*02|Homo sapiens|P|CH2|504..833|330 nt|1| | | | |330+0=330| | |
+tctactccagggacttcaccctccccaccgtgaagatcttacagtgtctgtgatggcagt
+ggacattaccccgaccatccagttgcctgtgcctcatctctggtacaccaggtgccatca
+gcatcacctgctggaggatgggcaggtcgtggatgtgaactggtccatcgcttccatact
+ggaggatgagctggcctccacacaaagcaagctcaccctcacccagaagcgctggctgcc
+cgaccacacctacacctgcaaggccacctatcaaggtaacacctttgaggacagtgccaa
+gaagtgtgcagatttcaaccgaggtgagag
+>M24165|IGHEP2*02|Homo sapiens|P|CH3|1..15|15 nt|1| | | | |15+0=15|partial in 5'| |
+tcgacganaatcagc
