@@ -1,0 +1,85 @@
+>AB699687|IGHG6-2*01|Sus scrofa_Landrace boar|F|CH1|n,67442..67734|294 nt|1|+1|-1| | |294+72=366| | |
+............ncccccaagacggccccatcggtctaccctctggccccctgcggcagg
+gacacgtct.........ggccctaacgtggccttgggctgcctggcctcaagctacttc
+ccc......gagccagtgaccgtgacctggaactcgggcgccctgaccagt.........
+...ggcgtgcacaccttcccatccgtcctgcagccgtca..................ggg
+ctctactccctcagcagcatggtgactgtgccggccaggagctcg.........tccaga
+aagtgcttcacgtgcaatgtcaaccacccggcc......accaccaccaaggtggacctg
+tgtgtt
+>AB699687|IGHG6-2*01|Sus scrofa_Landrace boar|F|H|g,68036..68058|24 nt|1|+1|-1| | |24+0=24| | |
+ggacgaccatgtcccatatgccca
+>AB699687|IGHG6-2*01|Sus scrofa_Landrace boar|F|CH2|g,68187..68512|327 nt|1|+1|-1| | |327+51=378| | |
+.........gcctgtgaagggcccgggccctcggccttcatcttccctccaaaacccaag
+gacaccctcatgatc...tcccggacaccccaggtcacgtgcgtggtggttgatgtgagc
+caggagaacccggaggtccagttctcctggtatgtggacggtgtagaggtgcac......
+...acggcccagacgaggccaaaggaggcgcagttcaac..................agc
+acctaccgtgtggtcagcgtcctgcccatccagcacgaggactgg......ctgaagggg
+aaggagttcgagtgcaaggtcaacaacaaagac......ctcccagcccccatcacaagg
+atcatctccaaggccaaa
+>AB699687|IGHG6-2*01|Sus scrofa_Landrace boar|F|CH3-CHS|g,68606..68931|327 nt|1|+1| | | |327+66=393| | |
+............gggccgagccgggagccgcaggtgtacaccctgtccccatccgccgag
+gagctgtcc.........aggagcaaagtcagcataacctgcctggtcactggcttctac
+cca......cctgacatcgatgtcgagtggaagagcaacggacagccggagccagagggc
+...aattaccgcaccaccccgccccagcaggacgtggac..................ggg
+acctacttcctgtacagcaagctcgcggtggacaaggccagctgg......cagcgtgga
+gacccattccagtgtgcggtgatgcacgaggct...ctgcacaaccactacacccagaag
+tccgtctccaagactcag.........ggtaaa
+>AB699687|IGHG6-2*01|Sus scrofa_Landrace boar|F|M1|g,70432..70562|132 nt|1|+1| | | |132+0=132| | |
+gaactgctcctggaggagagctgtgccgacgcccaggacggggagctggacgggctctgg
+accaccatctccatcttcatcacgctcttcctgctcagcgtgtgctacagcgccaccgtg
+acgctcttcaag
+>AB699687|IGHG6-2*01|Sus scrofa_Landrace boar|F|M2|70790..70870|81 nt|1| | | | |81+0=81| | |
+gtgaagtggatcttctcgtcggtggtggagctgaagcggaccattgtccccgactacaga
+aacatgatcgggcagggggcc
+>EU372655|IGHG6-2*02|Sus scrofa|F|CH1|n,2..294|294 nt|1|+1|-1| | |294+72=366| | |
+............ncccccaagacggccccatcggtctaccctctggccccctgcggcagg
+gacacgtct.........ggccctaacgtggccttgggctgcctggcctcaagctacttc
+ccc......gagccagtgaccctgacctggaactcgggcgccctgaccagt.........
+...ggcgtgcataccttcccatccgtcctgcagccgtca..................ggg
+ctctactccctcagcagcatggtgaccgtgccggccagcagcctg.........tccagc
+aagagctacacctgcaatgtcaaccacccggcc......accaccaccaaggtggacctg
+tgtgtt
+>EU372655|IGHG6-2*02|Sus scrofa|F|H|g,596..618|24 nt|1|+1|-1| | |24+0=24| | |
+ggacgaccatgtcccatatgccca
+>EU372655|IGHG6-2*02|Sus scrofa|F|CH2|g,747..1072|327 nt|1|+1|-1| | |327+51=378| | |
+.........gcctgtgaagggcccgggccctcggtcttcatcttccctccaaaacccaag
+gacaccctcatgatc...tcccggacaccccaggtcacgtgcgtggtggtagatgtgagc
+caggaaaacccggaggtccagttctcctggtatgtggacggtgtagaggtgcac......
+...acggcccagacgaggccaaaggaggcgcagttcaac..................agc
+acctaccgtgtggtcagcgtcctgcccatccagcacgaggactgg......ctgaagggg
+aaggagttcgagtgcaaggtcaacaacaaagac......ctcccagcccccatcacaagg
+atcatctccaaggccaaa
+>EU372655|IGHG6-2*02|Sus scrofa|F|CH3-CHS|g,1166..1491|327 nt|1|+1| | | |327+66=393| | |
+............gggccgagccgggagccgcaggtgtacaccctgtccccatccgccgag
+gagctgtcc.........aggagcaaagtcagcataacctgcctggtcactggcttctac
+cca......cctgacatcgatgtcgagtggaagagcaacggacagccggagccagagggc
+...aattaccgcaccaccccgccccagcaggacgtggac..................ggg
+acctacttcctgtacagcaagctcgcggtggacaaggccagctgg......cagcgtgga
+gacccattccagtgtgcggtgatgcacgaggct...ctgcacaaccactacacccagaag
+tccatcttcaagactccg.........ggtaaa
+>EU372653|IGHG6-2*03|Sus scrofa|F|CH1|n,2..294|294 nt|1|+1|-1| | |294+72=366| | |
+............ncccccaagacggccccatcggtctaccctctggccccctgcggcagg
+gacacgtct.........ggccctaacgtggccttgggctgcctggcctcaagctacttc
+ccc......gagccagtgaccgtgacctggaactcgggcgccctgaccagt.........
+...ggcgtgcacaccttcccatccgtcctgcagccgtca..................ggg
+ctctactccctcagcagcacggtgaccgtgccggccaggagctcg.........tccaga
+aagtgcttcacgtgcaatgtcaaccacccggcc......accaccaccaaggtggacctg
+tgtgtt
+>EU372653|IGHG6-2*03|Sus scrofa|F|H|g,596..618|24 nt|1|+1|-1| | |24+0=24| | |
+ggacgaccatgtcccatatgccca
+>EU372653|IGHG6-2*03|Sus scrofa|F|CH2|g,747..1072|327 nt|1|+1|-1| | |327+51=378| | |
+.........gcctgtgaagggaacgggccctcggtcttcatcttccctccaaaacccaag
+gacaccctcatgatc...tcccggacccccgaggtcacgtgcgtggtggtagatgtgagc
+caggaaaacccggaggtccagttctcctggtacgtggacggcgaagaggtgcac......
+...acggccgagacgaggccaaaggaggagcagttcaac..................agc
+acctaccgtgtggtcagcgtcctgcccatccagcaccaggactgg......ctgaaggga
+aaggagttcgagtgcaaggtcaacaacaaagac......ctcccagcccccatcacaagg
+atcatctccaaggccaaa
+>EU372653|IGHG6-2*03|Sus scrofa|F|CH3-CHS|g,1166..1479|315 nt|1|+1| | | |315+60=375|partial in 3'| |
+............gggccgagccgggagccgcaggtgtacaccctgtccccatccgccgag
+gagctgtcc.........aggagcaaagtcagcataacctgcctggtcactggcttctac
+cca......cctgacatcgatgtcgagtggaagagcaacggacagccggagccagagggc
+...aattaccgctccaccccgccccaggaggacgaggac..................ggg
+acctacttcctgtacagcaaactcgcggtggacaaggcgaggttg......cagagtgga
+ggcatccac...tgtgcggtgatgcacgaggct...ctgcacaaccactacacccagaag
+tccatctccaagact
