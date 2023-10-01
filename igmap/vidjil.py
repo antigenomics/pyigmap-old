@@ -1,6 +1,7 @@
 from collections import namedtuple
 from sys import platform
 from shutil import which
+import pandas as pd
 
 if platform == 'linux' or platform == 'linux2':
     zcat_cmd = 'zcat'
