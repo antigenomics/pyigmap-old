@@ -1,4 +1,6 @@
+from collections import namedtuple
 import os
+import pandas as pd
 from .globals import CAT_CMD, VIDJIL_CMD, VIDJIL_DATA_PATH, CORES
 
 
@@ -40,3 +42,13 @@ class VidjilWrapper:
         return f'{self.detect_cmd(input, output)} && ' + \
             f'{self.clones_cmd(output + "/_p*.fa", output)} && ' + \
             f'rm -r {output}/_p*'
+    
+
+def read_vidjil(path):
+    df = pd.read_csv(path,
+                     sep='\t',
+                     low_memory=False,
+                     usecols=lambda c: not c.startswith('Unnamed:'))    
+    df.sort_values('duplicate_count', inplace=True, ascending=False)
+    df.dropna(subset=['v_call', 'j_call'], inplace=True)
+    return df

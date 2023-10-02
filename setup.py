@@ -20,11 +20,15 @@ setup(name='igmap',
           'Natural Language :: English',
           'Programming Language :: Python :: 3.8',
       ],
-      packages=find_packages(),
+      packages=['igmap'],
       package_data={
-          'igmap': ['external/**/**/**']
+          'igmap': ['external/**', 'external/**/**', 'external/**/**/**']
       },
       include_package_data=True,
       entry_points={'console_scripts': [
           'igmap=igmap.__main__:main'
-      ]})
+      ]},
+      install_requires=[
+          'pandas',
+      ],
+      zip_safe=False)
