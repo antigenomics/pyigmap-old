@@ -1,4 +1,3 @@
-from collections import namedtuple
 import os
 import pandas as pd
 from .globals import CAT_CMD, VIDJIL_CMD, VIDJIL_DATA_PATH, CORES
