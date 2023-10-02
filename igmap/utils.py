@@ -1,9 +1,9 @@
-from collections import namedtuple
 import re
+from collections import namedtuple
 
 
-Cdr3Markup = namedtuple('Cdr3Markup',
-                        'sequence v_sequence_end j_sequence_start cdr3_sequence_start cdr3_sequence_end')
+Cdr3Markup = namedtuple(
+    'Cdr3Markup', 'junction cdr3_sequence_start cdr3_sequence_end')
 
 
 CYS_CODON = re.compile('TG[TC]')
@@ -29,9 +29,9 @@ def find_cdr3nt_simple(seq, vend=-1, jstart=-1, rescue_fgxg=True):
         phe = find_inframe_patterns(seq[(jstart-1):], FGXG_SHORT_CODON)
     phe = jstart + max(phe, default=-1)
     if cys < 0 or phe <= cys:
-        return Cdr3Markup(seq, vend, jstart, -1, -1)
+        return Cdr3Markup('', -1, -1)
     else:
-        return Cdr3Markup(seq, vend, jstart, cys + 4, phe - 1)
+        return Cdr3Markup(seq[cys:(phe + 2)], cys + 4, phe - 1)
 
 
 CODONS = {'AAA': 'K', 'AAC': 'N', 'AAG': 'K', 'AAT': 'N',
@@ -53,11 +53,16 @@ CODONS = {'AAA': 'K', 'AAC': 'N', 'AAG': 'K', 'AAT': 'N',
 
 
 def translate(seq):
-    return ''.join([CODONS.get(seq[i:i + 3], '_') for i in range(0, len(seq), 3)])
+    return ''.join([CODONS.get(seq[i:(i + 3)], '_') for i in range(0, len(seq), 3)])
 
 
-def translate_cdr3(seq, mid = -1):
+def translate_cdr3(seq, mid=-1):
+    l = len(seq)
     if mid < 0:
-        mid = len(seq) // 2
-    shift = len(seq) % 3
-    return translate(seq[:mid] + '_' * shift + seq[mid:])
+        mid = l // 2
+    shift = l % 3
+    if shift == 0:
+        pad = ''
+    else:
+        pad = '_' * (3 - shift)
+    return translate(seq[:mid] + pad + seq[mid:])

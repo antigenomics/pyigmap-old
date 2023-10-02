@@ -1,9 +1,11 @@
 import os
 import pandas as pd
-from .globals import CAT_CMD, VIDJIL_CMD, VIDJIL_DATA_PATH, CORES
+from .globals import CAT_CMD, CORES, VIDJIL_CMD, VIDJIL_DATA_PATH
+from .utils import find_cdr3nt_simple, translate_cdr3
 
 
 class VidjilWrapper:
+    # TODO: window parameters?
     def __init__(self,
                  germline='homo-sapiens',
                  rnaseq=True,
@@ -43,11 +45,35 @@ class VidjilWrapper:
             f'rm -r {output}/_p*'
     
 
-def read_vidjil(path):
+def read_vidjil(path, concise=False):
     df = pd.read_csv(path,
                      sep='\t',
                      low_memory=False,
-                     usecols=lambda c: not c.startswith('Unnamed:'))    
+                     usecols=lambda c: not c.startswith('Unnamed:'))
+    df.dropna(subset=['v_call', 'j_call'], inplace=True)    
     df.sort_values('duplicate_count', inplace=True, ascending=False)
-    df.dropna(subset=['v_call', 'j_call'], inplace=True)
+    df['v_sequence_end'] = df['v_sequence_end'].fillna(-1).astype(int)
+    df['j_sequence_start'] = df['j_sequence_start'].fillna(-1).astype(int)
+    for i, row in df.iterrows():    
+        seq = row['sequence']
+        vend = row['v_sequence_end']
+        jstart = row['j_sequence_start']
+        markup = find_cdr3nt_simple(seq, vend, jstart)
+        junction_aa = translate_cdr3(markup.junction)
+        if junction_aa:
+            cdr3_aa = junction_aa[1:-1]
+        else:
+            cdr3_aa = ''
+        row['junction'] = markup.junction
+        row['cdr3_sequence_start'] = markup.cdr3_sequence_start
+        row['cdr3_sequence_end'] = markup.cdr3_sequence_end
+        row['junction_aa'] = junction_aa
+        row['cdr3aa'] = cdr3_aa
+        df.loc[i] = row
+    if concise:
+        df = df.groupby(['v_call', 'j_call', 'junction', 'junction_aa'], as_index=False)\
+            .agg(duplicate_count=('duplicate_count', 'sum'),
+                 molecule_count=('sequence', 'count'))\
+                .sort_values('duplicate_count', ascending=False)
+        df = df[df['junction'] != '']
     return df

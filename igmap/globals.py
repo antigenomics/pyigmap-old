@@ -1,7 +1,6 @@
-from sys import platform
-from shutil import which
 import os
-
+from shutil import which
+from sys import platform
 
 CORES = os.cpu_count()
 SCRIPT_PATH = os.path.dirname(os.path.realpath(__file__))

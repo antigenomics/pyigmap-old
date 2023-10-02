@@ -1,5 +1,7 @@
 import argparse
+
 from .vidjil import VidjilWrapper
+
 
 def main():
     print(VidjilWrapper().run_cmd('input', 'output'))
@@ -8,8 +10,10 @@ def main():
         description='What the program does',
         epilog='Text at the bottom of help')
 
-    parser.add_argument('filename')           # positional argument
-    parser.add_argument('-c', '--count')      # option that takes a value
+    parser.add_argument('preset')           # positional argument
+    parser.add_argument('input')           # positional argument
+    parser.add_argument('output')
+    parser.add_argument('-m', '--mode')      
     parser.add_argument('-v', '--verbose',
                         action='store_true')  # on/off flag
 
