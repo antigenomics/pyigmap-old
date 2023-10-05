@@ -1,8 +1,5 @@
 import re
 from collections import namedtuple
-import olga.load_model as load_model
-import olga.generation_probability as pgen
-import olga.sequence_generation as seq_gen
 
 
 Cdr3Markup = namedtuple(
@@ -13,38 +10,6 @@ CYS_CODON = re.compile('TG[TC]')
 STOP_CODON = re.compile('T(?:AA|AG|GA)')
 FGXG_CODON = re.compile('T(?:GG|TT|TC)GG....GG')
 FGXG_SHORT_CODON = re.compile('T(?:GG|TT|TC)GG')
-
-
-species_glossary = {'hs': 'human', 'mus': 'mouse'}
-locus_glossary = {'TRA' : 'T_alpha', 'TRB' : 'T_beta',
-                  'IGH' : 'B_heavy', 'IGK' : 'B_kappa', 'IGL' : 'B_lambda'}
-
-class PgenModel:
-    def __init__(self, pgen_model = None):
-        self.pgen_model = pgen_model
-    
-    def calc_pgen(self, cdr3nt):
-        if self.pgen_model:
-            return self.pgen_model.compute_nt_CDR3_pgen(cdr3nt)
-        else:
-            return 1.
-
-def get_olga_model(species, locus):
-    sspecies = species_glossary[species]
-    llocus = locus_glossary[locus]
-    if sspecies and llocus:
-        params_file_name = f'default_models/{sspecies}_{llocus}/model_params.txt'
-        marginals_file_name = f'default_models/{sspecies}_{llocus}/model_marginals.txt'
-        V_anchor_pos_file =f'default_models/{sspecies}_{llocus}/V_gene_CDR3_anchors.csv'
-        J_anchor_pos_file = f'default_models/{sspecies}_{llocus}/J_gene_CDR3_anchors.csv'
-        generative_model = load_model.GenerativeModelVDJ()
-        generative_model.load_and_process_igor_model(marginals_file_name)
-        genomic_data = load_model.GenomicDataVDJ()
-        genomic_data.load_igor_genomic_data(params_file_name, V_anchor_pos_file, J_anchor_pos_file)
-        pgen_model = pgen.GenerationProbabilityVDJ(generative_model, genomic_data)
-        return PgenModel(pgen_model)
-    else:
-        return PgenModel()
 
 
 def find_inframe_patterns(seq, pattern):
