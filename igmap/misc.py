@@ -44,3 +44,5 @@ else:
     IGBLAST_CMD = BIN_PATH + '/' + IGBLAST_CMD
 VIDJIL_DATA_PATH = EXT_PATH + '/vidjil-germline'
 IGBLAST_DATA_PATH = EXT_PATH
+
+IGOR_DATA_PATH = EXT_PATH + '/igor_models'

@@ -2,8 +2,11 @@ import argparse
 import os
 import sys
 
-from .vidjil import VidjilWrapper
+from igmap.pgen import PgenModel
+
+from .vidjil import VidjilWrapper, read_vidjil
 from .misc import CORES
+
 
 def main():
     parser = argparse.ArgumentParser(
@@ -11,54 +14,59 @@ def main():
         description='Mapping raw reads to V(D)J rearrangements',
         epilog='')
 
-    parser.add_argument('-t', '--threads', 
-                        default=CORES, 
+    parser.add_argument('-t', '--threads',
+                        default=CORES,
                         type=int,
                         nargs=1,
                         help=f'Number of threads, defaults to {CORES} you have')
-    parser.add_argument('-n', '--nreads', 
-                        default=-1, 
+    parser.add_argument('-n', '--nreads',
+                        default=-1,
                         type=int,
                         nargs=1,
                         help=f'Number of reads to process (defaults to -1, all)')
-    parser.add_argument('-s', '--species', 
+    parser.add_argument('-s', '--species',
                         default='hs',
+                        choices=['hs', 'mus'],
                         nargs=1,
                         help='Species alias')
-    parser.add_argument('-m', '--mode', 
-                        required=True, 
-                        choices=['rnaseq', 'target'], 
+    parser.add_argument('-m', '--mode',
+                        required=True,
+                        choices=['rnaseq', 'target'],
                         help='Analysis mode')
     parser.add_argument('-i', '--input',
                         required=True,
-                        nargs='+', 
+                        nargs='+',
                         help='Input, single fastq[.gz], or pair for paired-end, or several files')
     parser.add_argument('-o', '--output',
                         required=True,
-                        help='Path to output file with output prefix')
+                        help='Path to the output directory')
+    parser.add_argument('-b', '--basename',
+                        default='igmap',
+                        help='Basename of analysis report, to be appended to path; defaults to "igmap"')
 
     options = parser.parse_args(args=None if sys.argv[1:] else ['--help'])
     input = ' '.join([os.path.abspath(x) for x in options.input])
-    out = split_path(options.output)
+    output = options.output
+    os.makedirs(output, exist_ok=True)
     if options.mode == 'rnaseq':
-        run_rnaseq(options, input, out)
+        run_rnaseq(options, input, output, options.basename)
     else:
         raise 'Unsupported mode'
-    
-def split_path(path):
-    abs_path = os.path.abspath(path)
-    dir = os.path.dirname(abs_path)
-    return (path, dir, os.path.basename(abs_path))
 
-def run_rnaseq(options, input, out):
-    # no need to create directories as vidjil does it automatically
+
+def run_rnaseq(options, input, output, basename):
     print(f'Running RNA-Seq analysis for {options}')
-    species_glossary = {'hs' : 'homo-sapiens', 'homo-sapiens' : 'homo-sapiens'}
-    vw = VidjilWrapper(species_glossary[options.species], 
+    species_glossary = {'hs': 'homo-sapiens', 
+                        'mus': 'mus-musculus'}
+    vw = VidjilWrapper(species_glossary[options.species],
                        cores=options.threads,
                        n=options.nreads)
-    #print(out)
-    os.system(vw.run_cmd(input, out[0]))
+    os.system(vw.run_cmd(input, output))
+    df = read_vidjil(output + '/result.tsv',
+                     concise=True, only_functional=True)
+    PgenModel().calc_pgen_df(options.species, df) # filter spurious rearrangements
+    df.to_csv(f'{output}/{basename}.tsv', sep='\t', index=False)    
+
 
 if __name__ == '__main__':
     main()
