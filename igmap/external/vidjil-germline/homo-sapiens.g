@@ -222,42 +222,6 @@
             "parameters": {
                 "seed": "12s"
             }
-        },
-
-        "IKZF1": {
-            "shortcut": "I",
-            "color" : "#d63a19",
-            "description": "IKAROS mediated recombinations",
-            "recombinations": [ {
-                "5": ["IKZF1-as-V.fa"],
-                "3": ["IKZF1-as-J.fa"]
-            } ],
-            "parameters": {
-                "seed": "10s"
-            }
-        },
-
-        "ERG": {
-            "shortcut": "E",
-            "color" : "#d63a19",
-            "description": "ERG mediated recombinations",
-            "recombinations": [ {
-                "5": ["ERG-as-V.fa"],
-                "3": ["ERG-as-J.fa"]
-            } ],
-            "parameters": {
-                "seed": "10s"
-            }
-        },
-
-        "CD": {
-            "shortcut": "I",
-            "color" : "#ffffff",
-            "description": "CD",
-            "recombinations": [ { "1": ["CD-sorting.fa"] } ],
-            "parameters": {
-                "seed": "13s"
-            }
         }
     }
 }
