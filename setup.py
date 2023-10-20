@@ -29,6 +29,6 @@ setup(name='igmap',
           'igmap=igmap.__main__:main'
       ]},
       install_requires=[
-          'pandas',
+          'pandas', 'olga'
       ],
       zip_safe=False)

@@ -4,5 +4,5 @@ cd vidjil
 make
 chmod 755 vidjil-algo
 cd ..
-cp ./vidjil/vidjil-algo .
-rm -rf ./vidjil/
+cp vidjil/vidjil-algo .
+rm -rf vidjil/
