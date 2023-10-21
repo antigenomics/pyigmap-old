@@ -5,16 +5,23 @@ from .utils import find_cdr3nt_simple, translate_cdr3
 
 
 class VidjilWrapper:
+    species_glossary = {'hs': 'homo-sapiens',
+                        'human' : 'homo-sapiens',
+                        'homo-sapiens' : 'homo-sapiens',
+                        'mus': 'mus-musculus',
+                        'mouse': 'mus-musculus',
+                        'mus-musculus': 'mus-musculus'}
     # TODO: window parameters?
     # TODO: D and C genes
     def __init__(self,
-                 germline='homo-sapiens', # TODO: glossary
+                 germline='homo-sapiens',
                  rnaseq=True,
                  cores=CORES,
                  n=-1):
         if os.path.isfile(germline):
             self.germline_path = germline
         else:
+            germline = self.species_glossary[germline]
             self.germline_path = f'{VIDJIL_DATA_PATH}/{germline}.g'
         self.vidjil_cmd = f'{VIDJIL_CMD} -g {self.germline_path}'
         if rnaseq:

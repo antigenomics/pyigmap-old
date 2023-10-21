@@ -43,6 +43,6 @@ if os.path.exists(BIN_PATH + '/igblastn'):
 else:
     IGBLAST_CMD = BIN_PATH + '/' + IGBLAST_CMD
 VIDJIL_DATA_PATH = EXT_PATH + '/vidjil-germline'
-IGBLAST_DATA_PATH = EXT_PATH
-
+IGBLAST_DATA_PATH = EXT_PATH + '/igblast_database'
+os.environ['IGDATA'] = os.path.abspath(IGBLAST_DATA_PATH)
 IGOR_DATA_PATH = EXT_PATH + '/igor_models'

@@ -6,14 +6,19 @@ from .misc import IGOR_DATA_PATH
 
 
 class PgenModel:
-    species_glossary = {'hs': 'human', 'mus': 'mouse'}
+    species_glossary = {'hs': 'human',
+                        'human' : 'human',
+                        'homo-sapiens' : 'human',
+                        'mus': 'mouse',
+                        'mouse': 'mouse',
+                        'mus-musculus': 'mouse'}
     locus_glossary = {'TRA': 'T_alpha', 'TRB': 'T_beta',
                       'IGH': 'B_heavy', 'IGK': 'B_kappa', 'IGL': 'B_lambda'}
 
     def __init__(self):
         self.models = dict()
 
-    def calc_pgen(self, species, locus, cdr3_nt):
+    def calc_pgen(self, cdr3_nt, species='human', locus='TRB'):
         mdl = self.get_olga_model(species, locus)
         if mdl:
             pgen = mdl.compute_nt_CDR3_pgen(cdr3_nt)
@@ -21,7 +26,7 @@ class PgenModel:
                 return math.log10(pgen)
         return math.nan
 
-    def calc_pgen_df(self, species, df):
+    def calc_pgen_df(self, df, species='human'):
         df['pgen'] = math.nan
         for i, row in df.iterrows():
             locus = row['locus']
@@ -30,7 +35,7 @@ class PgenModel:
                 species=species, locus=locus, cdr3_nt=cdr3_nt)
             df.loc[i] = row            
 
-    def get_olga_model(self, species, locus):
+    def get_olga_model(self, species='human', locus='TRB'):
         locus = locus[0:3]
         ss = self.species_glossary.get(species)
         ll = self.locus_glossary.get(locus)

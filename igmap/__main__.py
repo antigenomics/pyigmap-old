@@ -25,8 +25,8 @@ def main():
                         nargs=1,
                         help=f'Number of reads to process (defaults to -1, all)')
     parser.add_argument('-s', '--species',
-                        default='hs',
-                        choices=['hs', 'mus'],
+                        default='human',
+                        choices=['human', 'mouse'],
                         nargs=1,
                         help='Species alias')
     parser.add_argument('-m', '--mode',
@@ -43,7 +43,6 @@ def main():
     parser.add_argument('-b', '--basename',
                         default='igmap',
                         help='Basename of analysis report, to be appended to path; defaults to "igmap"')
-
     options = parser.parse_args(args=None if sys.argv[1:] else ['--help'])
     input = ' '.join([os.path.abspath(x) for x in options.input])
     output = options.output
@@ -56,15 +55,13 @@ def main():
 
 def run_rnaseq(options, input, output, basename):
     print(f'Running RNA-Seq analysis for {options}')
-    species_glossary = {'hs': 'homo-sapiens', 
-                        'mus': 'mus-musculus'}
-    vw = VidjilWrapper(species_glossary[options.species],
+    vw = VidjilWrapper(species=options.species,
                        cores=options.threads,
                        n=options.nreads)
     os.system(vw.run_cmd(input, output))
-    df = read_vidjil(output + '/result.tsv',
+    df = read_vidjil(path=output + '/result.tsv',
                      concise=True, only_functional=True)
-    PgenModel().calc_pgen_df(options.species, df) # filter spurious rearrangements
+    PgenModel().calc_pgen_df(df=df, species=options.species) # filter spurious rearrangements
     df.to_csv(f'{output}/{basename}.tsv', sep='\t', index=False)    
 
 
