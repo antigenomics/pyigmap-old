@@ -27,6 +27,10 @@ def CAT_CMD(fname):
     else:
         return 'cat ' + fname
 
+    
+FQ2FA_CMD = '{if(NR%4==1) {printf(">%s\\n",substr($0,2));} else if(NR%4==2) print;}'
+FQ2FA_CMD = f'awk "{FQ2FA_CMD}" | tr -s " " ";"'
+
 
 if not which('parallel'):
     raise 'Requires GNU Parallel to work'

@@ -6,7 +6,7 @@
   "description": "mouse.D",
   "number-of-letters": 585,
   "number-of-sequences": 34,
-  "last-updated": "2023-10-21T02:56:00",
+  "last-updated": "2023-10-21T20:04:00",
   "number-of-volumes": 1,
   "bytes-total": 52860,
   "bytes-to-cache": 670,

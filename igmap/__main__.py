@@ -13,7 +13,6 @@ def main():
         prog='igmap',
         description='Mapping raw reads to V(D)J rearrangements',
         epilog='')
-
     parser.add_argument('-t', '--threads',
                         default=CORES,
                         type=int,
@@ -62,7 +61,7 @@ def run_rnaseq(options, input, output, basename):
     df = read_vidjil(path=output + '/result.tsv',
                      concise=True, only_functional=True)
     PgenModel().calc_pgen_df(df=df, species=options.species) # filter spurious rearrangements
-    df.to_csv(f'{output}/{basename}.tsv', sep='\t', index=False)    
+    df.to_csv(f'{output}/{basename}.tsv', sep='\t', index=False)  
 
 
 if __name__ == '__main__':

@@ -6,7 +6,7 @@
   "description": "mouse.V",
   "number-of-letters": 264191,
   "number-of-sequences": 936,
-  "last-updated": "2023-10-21T02:56:00",
+  "last-updated": "2023-10-21T20:04:00",
   "number-of-volumes": 1,
   "bytes-total": 236069,
   "bytes-to-cache": 78003,

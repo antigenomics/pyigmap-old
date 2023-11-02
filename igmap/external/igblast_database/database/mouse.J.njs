@@ -6,7 +6,7 @@
   "description": "mouse.J",
   "number-of-letters": 6653,
   "number-of-sequences": 121,
-  "last-updated": "2023-10-21T02:56:00",
+  "last-updated": "2023-10-21T20:04:00",
   "number-of-volumes": 1,
   "bytes-total": 62847,
   "bytes-to-cache": 3279,
