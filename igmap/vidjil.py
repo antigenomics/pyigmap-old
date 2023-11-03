@@ -14,16 +14,16 @@ class VidjilWrapper:
     # TODO: window parameters?
     # TODO: D and C genes
     def __init__(self,
-                 germline='homo-sapiens',
+                 species='homo-sapiens',
                  rnaseq=True,
                  cores=CORES,
                  n=-1):
-        if os.path.isfile(germline):
-            self.germline_path = germline
+        if os.path.isfile(species):
+            self.species = species
         else:
-            germline = self.species_glossary[germline]
-            self.germline_path = f'{VIDJIL_DATA_PATH}/{germline}.g'
-        self.vidjil_cmd = f'{VIDJIL_CMD} -g {self.germline_path}'
+            species = self.species_glossary[species]
+            self.species = f'{VIDJIL_DATA_PATH}/{species}.g'
+        self.vidjil_cmd = f'{VIDJIL_CMD} -g {self.species}'
         if rnaseq:
             self.vidjil_cmd = self.vidjil_cmd + ' -U'
         self.cores = cores

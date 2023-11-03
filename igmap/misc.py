@@ -18,10 +18,8 @@ elif platform == 'win32':
     raise 'Cannot run on Windows'
 
 
-def CAT_CMD(fname, ensure_single_input=False):
+def CAT_CMD(fname):
     if isinstance(fname, list):
-        if ensure_single_input and len(fname) > 1:
-            raise f'Only single file name allowed "{fname}"'
         # TODO warn if extension don't match
         fname = ' '.join(fname)
     if fname.endswith('.gz'):

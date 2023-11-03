@@ -31,8 +31,13 @@ def main():
                         help='Species alias')
     parser.add_argument('-m', '--mode',
                         required=True,
-                        choices=['rnaseq', 'target'],
+                        choices=['rnaseq', 'amplicon', 'mixed'],
                         help='Analysis mode')
+    parser.add_argument('-g', '--gene',
+                        default='all',
+                        choices=['ig', 'tcr', 'all'],
+                        nargs=1,
+                        help='Gene')
     parser.add_argument('-i', '--input',
                         required=True,
                         nargs='+',
@@ -62,7 +67,19 @@ def run_rnaseq(options, input, output, basename):
     df = read_vidjil(path=output + '/result.tsv',
                      concise=True, only_functional=True)
     PgenModel().calc_pgen_df(df=df, species=options.species) # filter spurious rearrangements
-    df.to_csv(f'{output}/{basename}.tsv', sep='\t', index=False)  
+    df.to_csv(f'{output}/{basename}.tsv', sep='\t', index=False)
+
+
+def run_amplicon(options, input, output, basename):
+    print(f'Running amplicon analysis for {options}')
+    if options.gene == 'all':
+        raise 'Should specify either "ig" or "tcr" as gene for amplicon'
+    iw = IgBlastWrapper(gene=options.gene,
+                        species=options.species,
+                        cores=options.threads,
+                        n=options.nreads)
+    os.makedirs(output, exist_ok=True)
+    os.system(iw.run_cmd(input, output + '/' + basename + '.txt'))
 
 
 if __name__ == '__main__':

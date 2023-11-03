@@ -8,7 +8,7 @@ class IgBlastWrapper:
                         'mouse': 'mouse',
                         'mus-musculus': 'mouse'}
     
-    receptor_glossary = {
+    gene_glossary = {
         'antibody': 'Ig',
         'ig': 'Ig',
         'tr': 'TCR',
@@ -16,19 +16,19 @@ class IgBlastWrapper:
     }
     
     def __init__(self,
-                 receptor,
-                 germline='human',
+                 gene,
+                 species='human',
                  cores=CORES,
                  n=-1):
-        self.species = self.species_glossary[germline.lower()]
-        self.receptor = self.receptor_glossary[receptor.lower()]
+        self.gene = self.gene_glossary[gene.lower()]
+        self.species = self.species_glossary[species.lower()]
         self.cores = cores
-        params = [f'-germline_db_V {IGBLAST_DATA_PATH}/database/{self.species}.{self.receptor}.V',
-                  f'-germline_db_D {IGBLAST_DATA_PATH}/database/{self.species}.{self.receptor}.D',
-                  f'-germline_db_J {IGBLAST_DATA_PATH}/database/{self.species}.{self.receptor}.J',
+        params = [f'-germline_db_V {IGBLAST_DATA_PATH}/database/{self.species}.{self.gene}.V',
+                  f'-germline_db_D {IGBLAST_DATA_PATH}/database/{self.species}.{self.gene}.D',
+                  f'-germline_db_J {IGBLAST_DATA_PATH}/database/{self.species}.{self.gene}.J',
                   f'-organism {self.species}',
                   f'-auxiliary_data {IGBLAST_DATA_PATH}/optional_file/{self.species}_gl.aux',
-                  f'-ig_seqtype {self.receptor} -show_translation -outfmt 19 -num_threads {self.cores}']
+                  f'-ig_seqtype {self.gene} -show_translation -outfmt 19 -num_threads {self.cores}']
         # TODO build mouse C germline
         if self.species == 'human':
             params.append(f'-c_region_db {IGBLAST_DATA_PATH}/database/ncbi_{self.species}_c_genes')        
