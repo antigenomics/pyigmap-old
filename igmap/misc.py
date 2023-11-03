@@ -18,8 +18,10 @@ elif platform == 'win32':
     raise 'Cannot run on Windows'
 
 
-def CAT_CMD(fname):
+def CAT_CMD(fname, ensure_single_input=False):
     if isinstance(fname, list):
+        if ensure_single_input and len(fname) > 1:
+            raise f'Only single file name allowed "{fname}"'
         # TODO warn if extension don't match
         fname = ' '.join(fname)
     if fname.endswith('.gz'):
@@ -29,7 +31,7 @@ def CAT_CMD(fname):
 
     
 FQ2FA_CMD = '{if(NR%4==1) {printf(">%s\\n",substr($0,2));} else if(NR%4==2) print;}'
-FQ2FA_CMD = f'awk "{FQ2FA_CMD}" | tr -s " " ";"'
+FQ2FA_CMD = f'awk \'{FQ2FA_CMD}\' | tr -s \' \' \';\''
 
 
 if not which('parallel'):

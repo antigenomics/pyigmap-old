@@ -8,3 +8,4 @@ from .misc import (CAT_CMD,
                    IGOR_DATA_PATH)
 from .utils import Cdr3Markup, find_cdr3nt_simple, translate_cdr3
 from .vidjil import VidjilWrapper, read_vidjil
+from .igblast import IgBlastWrapper

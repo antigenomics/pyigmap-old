@@ -5,6 +5,7 @@ import sys
 from igmap.pgen import PgenModel
 
 from .vidjil import VidjilWrapper, read_vidjil
+from .igblast import IgBlastWrapper
 from .misc import CORES
 
 
