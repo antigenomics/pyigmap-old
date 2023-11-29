@@ -30,6 +30,8 @@ def CAT_CMD(fname):
     
 FQ2FA_CMD = '{if(NR%4==1) {printf(">%s\\n",substr($0,2));} else if(NR%4==2) print;}'
 FQ2FA_CMD = f'awk \'{FQ2FA_CMD}\' | tr -s \' \' \';\''
+TAB2FQ_CMD = '{ if (NF<4) print "@"$1"\\n"$2"\\n+\\n"$3; else print "@"$1"\\n"$2"\\n+\\n"$3"\\n@"$1"\\n"$4"\\n+\\n"$5 }'
+TAB2FQ_CMD = f'awk -F"\t" \'{TAB2FQ_CMD}\''
 
 
 if not which('parallel'):

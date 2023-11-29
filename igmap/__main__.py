@@ -36,7 +36,6 @@ def main():
     parser.add_argument('-g', '--gene',
                         default='all',
                         choices=['ig', 'tcr', 'all'],
-                        nargs=1,
                         help='Gene')
     parser.add_argument('-i', '--input',
                         required=True,
@@ -47,18 +46,20 @@ def main():
                         help='Path to the output directory')
     parser.add_argument('-b', '--basename',
                         default='igmap',
-                        help='Basename of analysis report, to be appended to path; defaults to "igmap"')
+                        help='Basename of analysis results, to be appended to output path; defaults to "igmap"')
     options = parser.parse_args(args=None if sys.argv[1:] else ['--help'])
     input = ' '.join([os.path.abspath(x) for x in options.input])
     output = options.output
     os.makedirs(output, exist_ok=True)
     if options.mode == 'rnaseq':
-        run_rnaseq(options, input, output, options.basename)
+        run_rnaseq(options, input, output)
+    if options.mode == 'amplicon':
+        run_amplicon(options, input, output)
     else:
         raise 'Unsupported mode'
 
 
-def run_rnaseq(options, input, output, basename):
+def run_rnaseq(options, input, output):
     print(f'Running RNA-Seq analysis for {options}')
     vw = VidjilWrapper(species=options.species,
                        cores=options.threads,
@@ -67,10 +68,10 @@ def run_rnaseq(options, input, output, basename):
     df = read_vidjil(path=output + '/result.tsv',
                      concise=True, only_functional=True)
     PgenModel().calc_pgen_df(df=df, species=options.species) # filter spurious rearrangements
-    df.to_csv(f'{output}/{basename}.tsv', sep='\t', index=False)
+    df.to_csv(f'{output}/{options.basename}.tsv', sep='\t', index=False)
 
 
-def run_amplicon(options, input, output, basename):
+def run_amplicon(options, input, output):
     print(f'Running amplicon analysis for {options}')
     if options.gene == 'all':
         raise 'Should specify either "ig" or "tcr" as gene for amplicon'
@@ -78,9 +79,8 @@ def run_amplicon(options, input, output, basename):
                         species=options.species,
                         cores=options.threads,
                         n=options.nreads)
-    os.makedirs(output, exist_ok=True)
-    os.system(iw.run_cmd(input, output + '/' + basename + '.txt'))
-
+    os.system(iw.run_cmd(input, f'{output}/{options.basename}.tsv'))
+#os.mkfifo
 
 if __name__ == '__main__':
     main()
