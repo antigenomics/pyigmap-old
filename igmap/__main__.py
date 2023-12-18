@@ -17,12 +17,10 @@ def main():
     parser.add_argument('-t', '--threads',
                         default=CORES,
                         type=int,
-                        nargs=1,
                         help=f'Number of threads, defaults to {CORES} you have')
     parser.add_argument('-n', '--nreads',
                         default=-1,
                         type=int,
-                        nargs=1,
                         help=f'Number of reads to process (defaults to -1, all)')
     parser.add_argument('-s', '--species',
                         default='human',
