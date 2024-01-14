@@ -26,14 +26,17 @@ class PgenModel:
                 return math.log10(pgen)
         return math.nan
 
-    def calc_pgen_df(self, df, species='human'):
+    def calc_pgen_df(self, df, species='human', inplace = False):
+        if not inplace:
+            df = df.copy()
         df['pgen'] = math.nan
         for i, row in df.iterrows():
             locus = row['locus']
             cdr3_nt = row['junction']
             row['pgen'] = self.calc_pgen(
                 species=species, locus=locus, cdr3_nt=cdr3_nt)
-            df.loc[i] = row            
+            df.loc[i] = row
+        return df   
 
     def get_olga_model(self, species='human', locus='TRB'):
         locus = locus[0:3]

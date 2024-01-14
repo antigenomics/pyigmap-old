@@ -65,7 +65,7 @@ def run_rnaseq(options, input, output):
     os.system(vw.run_cmd(input, output))
     df = read_vidjil(path=output + '/result.tsv',
                      concise=True, only_functional=True)
-    PgenModel().calc_pgen_df(df=df, species=options.species) # filter spurious rearrangements
+    PgenModel().calc_pgen_df(df=df, species=options.species, inplace=True) # detect spurious rearrangements
     df.to_csv(f'{output}/{options.basename}.tsv', sep='\t', index=False)
 
 

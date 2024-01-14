@@ -95,5 +95,6 @@ def read_vidjil(path, concise=False, only_functional=False):
                  molecule_count=('sequence', 'count'),
                  v_sequence_end=('v_sequence_end', 'max'),
                  j_sequence_start=('j_sequence_start', 'min'))
-    df.sort_values('duplicate_count', inplace=True, ascending=False)        
+    df.sort_values('duplicate_count', inplace=True, ascending=False)
+    df.fillna('', inplace=True)   
     return df
