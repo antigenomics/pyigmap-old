@@ -104,14 +104,21 @@ def correct_clonotypes(df,
                                     c_count_dict=c_count_dict)
 
 
-def correct_full(df):
-    df = aggregate_clonotypes(df)
-    clns = fetch_clonotypes(df)
-    corr = correct_clonotypes(clns)
+def correct_full(df,
+                 junction_col = 'junction',
+                 clonotype_cols = ['v_call', 'j_call', 'junction']):
+    df = aggregate_clonotypes(df,
+                              grouping_cols=clonotype_cols)
+    clns = fetch_clonotypes(df, 
+                            junction_col=junction_col,
+                            clonotype_cols=clonotype_cols)
+    corr = correct_clonotypes(clns,
+                 junction_col=junction_col,
+                 clonotype_cols=clonotype_cols)
     corr = corr.drop(columns=['count']).drop_duplicates()
     merged = df.merge(corr, 
-                      left_on=['v_call', 'j_call', 'junction'], 
-                      right_on=['v_call', 'j_call', 'junction'],
+                      left_on=clonotype_cols, 
+                      right_on=clonotype_cols,
                       how='left').fillna('')
     res = aggregate_clonotypes(merged, grouping_cols='parent')
     return res.drop(columns = 'parent')
