@@ -58,6 +58,8 @@ def read_vidjil(path, concise=False, only_functional=False):
                      sep='\t',
                      low_memory=False,
                      usecols=lambda c: not c.startswith('Unnamed:'))
+    if not 'duplicate_count' in df:
+        df['duplicate_count'] = 1
     df.dropna(subset=['v_call', 'j_call'], inplace=True)    
     df['v_sequence_end'] = df['v_sequence_end'].fillna(-1).astype(int)
     df['j_sequence_start'] = df['j_sequence_start'].fillna(-1).astype(int)

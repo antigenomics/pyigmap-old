@@ -5,14 +5,16 @@ def aggregate_clonotypes(df,
                          grouping_cols = ['v_call', 'j_call', 'junction'],
                          count_col = 'duplicate_count'):
     df = df.copy()
-    df = df.reset_index(drop=True)
+    df = df.reset_index(drop=True) # in case already grouped
+    df['rank'] = df.index
     drg = df.groupby(grouping_cols)
     df['total'] = drg[count_col].transform('sum')
     df['max_count'] = drg[count_col].transform('max')
-    df = df.reset_index()
-    df = df[df[count_col] == df['max_count']]
+    df['min_rank'] = drg['rank'].transform('min') # resolve ambigous choices with same duplicate_count
+    df = df.reset_index(drop = 'True')
+    df = df[(df[count_col] == df['max_count']) & (df['rank'] == df['min_rank'])]
     df[count_col] = df['total']
-    df = df.drop(columns=['index', 'total', 'max_count'])
+    df = df.drop(columns=['min_rank', 'rank', 'total', 'max_count'])
     df = df.sort_values(by = count_col, ascending=False)
     return df
 
@@ -106,16 +108,20 @@ def correct_clonotypes(df,
 
 def correct_full(df,
                  junction_col = 'junction',
-                 clonotype_cols = ['v_call', 'j_call', 'junction']):
+                 clonotype_cols = ['v_call', 'j_call', 'junction'],
+                 count_col = 'duplicate_count'):
     df = aggregate_clonotypes(df,
-                              grouping_cols=clonotype_cols)
+                              grouping_cols=clonotype_cols,
+                              count_col=count_col)
     clns = fetch_clonotypes(df, 
                             junction_col=junction_col,
-                            clonotype_cols=clonotype_cols)
+                            clonotype_cols=clonotype_cols,
+                            count_col=count_col)
     corr = correct_clonotypes(clns,
                  junction_col=junction_col,
-                 clonotype_cols=clonotype_cols)
-    corr = corr.drop(columns=['count']).drop_duplicates()
+                 clonotype_cols=clonotype_cols,
+                 count_col=count_col)
+    corr = corr.drop(columns=['count']).drop_duplicates() # count is un-aggregated duplicate count
     merged = df.merge(corr, 
                       left_on=clonotype_cols, 
                       right_on=clonotype_cols,
